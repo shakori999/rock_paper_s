@@ -1,17 +1,19 @@
-const items = ['Rock', 'Paper','Scissors']
-
-const random = Math.floor(Math.random() * items.length);
-
 const player_select = prompt("Please enter your choice(Rock,Paper,Scissors) choice one of them:");
 
 
-function getComputerChoice(choice) {
-  console.log(choice)
-  return choice 
+function getComputerChoice() {
+
+  const items = ['Rock', 'Paper','Scissors']
+
+  const random = Math.floor(Math.random() * items.length);
+  computer_choice = items[random]
+
+  //console.log(computer_choice)
+  return computer_choice 
 }
 
 function getPlayerChoice(choice) {
-  console.log(choice)
+  //console.log(choice)
   return choice 
 }
 
@@ -27,7 +29,6 @@ function round(computerSelection,playerSelection) {
     return console.log("your input not right")
   }
 
-
   // Rock choice
   if (computerSelection == "Rock" || playerSelection == "Rock") {
     return console.log("Still Mate! Rock equals Rock"); 
@@ -39,7 +40,6 @@ function round(computerSelection,playerSelection) {
     return console.log("your input not right")
   }
 
-
   // Scissors choice
   if (computerSelection == "Scissors" || playerSelection == "Rock") {
     return console.log("You Win! Rock beats Scissors"); 
@@ -48,11 +48,11 @@ function round(computerSelection,playerSelection) {
   } else if (computerSelection == "Scissors" || playerSelection == "Scissors") {
     return console.log("Still Mate! Scissors equals scissors"); 
   } else {
-    return console.log("your input not right")
+    return console.log("your input is not right")
   }
 
 
 };
 
-round(getComputerChoice(items[random]),getPlayerChoice(player_select))
+round(getComputerChoice(),getPlayerChoice(player_select))
 
